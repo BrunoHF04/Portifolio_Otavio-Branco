@@ -17,37 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Intersection Observer for scroll animations
   const observerOptions = {
-    threshold: 0.1
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
+        entry.target.classList.add('active');
+        // If it's a section, reveal its internal elements too
+        const describes = entry.target.querySelectorAll('.reveal, .cascade');
+        describes.forEach(el => el.classList.add('active'));
       }
     });
   }, observerOptions);
 
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => {
-    // Hidden state initially could be handled by CSS if fade-in class is missing
-    // or we can just apply simple transitions
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-  });
-
-  const reveals = document.querySelectorAll('section');
-  reveals.forEach(reveal => {
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-    sectionObserver.observe(reveal);
-  });
+  const reveals = document.querySelectorAll('.reveal, .cascade');
+  reveals.forEach(el => observer.observe(el));
 });
