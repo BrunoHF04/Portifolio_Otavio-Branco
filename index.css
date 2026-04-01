@@ -11,28 +11,45 @@
   --card-bg: #ffffff;
   --input-bg: #ffffff;
   --border-color: #dee2e6;
+  --nav-text: #212529;
 }
+
 
 /* DARK MODE VARIABLES */
 body.dark-mode {
   --text-color: #f1f5f1;
   --text-muted: #94a3b8;
-  --bg-light: #0d1117;
+  --bg-light: #111827; /* Deep forest/midnight */
   --white: #0a0c10;
   --navbar-bg: rgba(10, 12, 16, 0.85);
   --card-bg: #161b22;
   --input-bg: #0d1117;
   --border-color: #30363d;
-  --blob-opacity: 0.15;
+  --blob-opacity: 0.2;
+  --nav-text: #f1f5f1;
 }
+
 
 body {
   --blob-opacity: 0.08;
+  background-color: var(--white);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .topo-pattern {
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 L20 10 L20 20 L10 20 Z M40 40 L50 40 L50 50 L40 50 Z M60 10 L70 10 L70 20 L60 20 Z' fill='%23198754' fill-opacity='0.03'/%3E%3C/svg%3E");
 }
+
+body.dark-mode .topo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 L20 10 L20 20 L10 20 Z M40 40 L50 40 L50 50 L40 50 Z M60 10 L70 10 L70 20 L60 20 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
+}
+
+
+body.dark-mode .topo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 L20 10 L20 20 L10 20 Z M40 40 L50 40 L50 50 L40 50 Z M60 10 L70 10 L70 20 L60 20 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
+}
+
 
 
 
@@ -224,10 +241,11 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--nav-text);
   font-weight: 500;
   transition: var(--transition);
 }
+
 
 nav ul li a:hover {
   color: var(--primary-color);
@@ -372,7 +390,10 @@ body.dark-mode .hero-content {
 /* SECTIONS */
 section {
   padding: 100px 10%;
+  background-color: var(--white);
+  transition: background-color 0.4s ease;
 }
+
 
 .section-title {
   text-align: center;
