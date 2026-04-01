@@ -5,9 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otávio Branco | Consultor Solo Rico</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#198754">
+    <link rel="apple-touch-icon" href="Image/icon-192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SoloRico">
+
     <meta name="description"
         content="Portfolio profissional de Otávio Branco, Consultor de Vendas e Revendedor de Insumos Agrícolas da Solo Rico.">
+
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="Image/icon-192.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +46,22 @@
 
 <body class="loading topo-pattern">
 
+    <!-- SCROLL PROGRESS BAR (SAFRA) -->
+    <div id="scroll-progress"></div>
+
+    <!-- CUSTOM CURSOR (AGRO THEME) -->
+
+    <div class="cursor-agro">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22V10M12 10C12 10 12 5 17 5C17 5 17 10 12 10ZM12 10C12 10 12 5 7 5C7 5 7 10 12 10Z" 
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+
+
     <!-- BACKGROUND BLOBS -->
+
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
@@ -77,8 +104,9 @@
             <h1>Otavio <span>Branco</span></h1>
             <p>Revendedor Especialista em Insumos Agrícolas. <br>Cultivando soluções de alta performance para sua
                 lavoura com a tecnologia Solo Rico.</p>
-            <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="btn btn-primary" target="_blank">Falar no WhatsApp <i
-                    class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." 
+               class="btn btn-primary btn-magnetic" target="_blank">Falar no WhatsApp <i class="fab fa-whatsapp"></i></a>
+
         </div>
         <div class="hero-image-container">
             <img src="Image/Otavio_Branco.png" alt="Otávio Branco">
@@ -104,9 +132,23 @@
                     levo tecnologia de ponta para o campo.</p>
                 <p>Especialista em nutrição vegetal e gestão de insumos, trabalho lado a lado com quem produz para
                     garantir resultados sustentáveis e lucrativos.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="#contato" class="btn btn-primary">Ver Soluções</a>
+                
+                <!-- SIGNATURE ANIMATION -->
+                <div class="signature-container">
+                    <svg viewBox="0 0 400 100" class="signature-svg">
+                        <!-- Robust cursive path for "Otávio Branco" -->
+                        <path d="M30,70 C50,20 70,70 90,70 M100,40 L100,80 M110,70 C130,50 150,70 170,70 M180,40 C200,90 220,40 240,40 M260,70 L290,70 M310,40 C330,90 350,40 370,40" 
+                              fill="none" stroke="var(--primary-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="signature-path"/>
+                    </svg>
+                    <span class="signature-label">Consultor Solo Rico</span>
                 </div>
+
+
+                <div class="buttons-group" style="margin-top: 2rem; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#solucoes" class="btn btn-primary btn-magnetic">Ver Soluções</a>
+                    <button id="download-vcard" class="btn btn-secondary btn-magnetic">Salvar Contato</button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -233,7 +275,33 @@
 
     </section>
 
+    <section id="parceiros" class="reveal">
+        <div class="section-title">
+            <h2>Parceiros & Marcas</h2>
+            <p>Representando as maiores soluções em nutrição e produtividade do mercado.</p>
+        </div>
+        <div class="partners-grid cascade">
+            <div class="partner-item">
+                <i class="fas fa-leaf"></i>
+                <span>SOLO RICO</span>
+            </div>
+            <div class="partner-item">
+                <i class="fas fa-seedling"></i>
+                <span>SOLLUS</span>
+            </div>
+            <div class="partner-item">
+                <i class="fas fa-microscope"></i>
+                <span>TITANIUM</span>
+            </div>
+            <div class="partner-item">
+                <i class="fas fa-truck-moving"></i>
+                <span>LOGÍSTICA AGRO</span>
+            </div>
+        </div>
+    </section>
+
     <section id="faq" style="background-color: var(--bg-light);" class="reveal">
+
         <div class="section-title reveal">
             <h2>Dúvidas Frequentes</h2>
             <p>Respostas rápidas para as principais questões dos produtores.</p>
@@ -265,12 +333,30 @@
     </footer>
 
 
-    <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registrado!', reg))
+                    .catch(err => console.log('Erro no registro do SW:', err));
+            });
+        }
+    </script>
     <script src="script.js"></script>
 </body>
+
+
 
 </html>

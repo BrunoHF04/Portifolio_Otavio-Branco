@@ -138,6 +138,94 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- LENIS SMOOTH SCROLL ---
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // --- CUSTOM CURSOR (AGRO) ---
+  const cursorAgro = document.querySelector('.cursor-agro');
+
+  if (cursorAgro) {
+    window.addEventListener('mousemove', (e) => {
+      cursorAgro.style.left = `${e.clientX}px`;
+      cursorAgro.style.top = `${e.clientY}px`;
+    });
+
+    // Hover effects
+    const hoverElements = document.querySelectorAll('a, button, .faq-question, .hero-image-container img');
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorAgro.style.transform = 'translate(-50%, -50%) scale(1.8) rotate(0deg)';
+        cursorAgro.style.color = 'var(--accent-color)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorAgro.style.transform = 'translate(-50%, -50%) scale(1) rotate(-15deg)';
+        cursorAgro.style.color = '';
+      });
+    });
+  }
+
+
+
+  // --- ELITE UX FEATURES ---
+  const scrollProgress = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    // Progress calculation
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    if (scrollProgress) scrollProgress.style.width = `${progress}%`;
+
+    // Back to top visibility
+    if (backToTop) {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    }
+  });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      lenis.scrollTo(0);
+    });
+  }
+
+  // --- MAGNETIC BUTTONS (110% ELITE) ---
+  const magneticButtons = document.querySelectorAll('.btn-magnetic');
+  magneticButtons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // --- PWA SERVICE WORKER REGISTRATION ---
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('PWA Service Worker pronto!'))
+        .catch(err => console.log('PWA Error:', err));
+    });
+  }
+
+
   // --- SCROLL REVEAL OBSERVER ---
 
   const observerOptions = {
@@ -151,11 +239,18 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('active');
         const secondaryReveals = entry.target.querySelectorAll('.reveal, .cascade');
         secondaryReveals.forEach(el => el.classList.add('active'));
+        
+        // Trigger Signature Animation
+        const signature = entry.target.querySelector('.signature-path');
+        if (signature) {
+          signature.classList.add('active');
+        }
       }
     });
   }, observerOptions);
 
-  const reveals = document.querySelectorAll('.reveal, .cascade');
+  const reveals = document.querySelectorAll('.reveal, .cascade, section');
   reveals.forEach(el => observer.observe(el));
 });
+
 
