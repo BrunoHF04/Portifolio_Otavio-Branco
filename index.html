@@ -14,19 +14,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="Otávio Branco">
+    <meta name="keywords" content="Solo Rico, Insumos Agrícolas, Consultor, Agronegócio, Titanium Foliar, Adjuvantes">
+    <meta property="og:title" content="Otávio Branco | Consultor Solo Rico">
+    <meta property="og:description" content="Especialista em Insumos Agrícolas e Nutrição Vegetal. Soluções Solo Rico para o produtor rural.">
+    <meta property="og:image" content="https://bruno-fernandes.github.io/Otavio-Branco/Image/Otavio_Branco.png">
+    <meta property="og:url" content="https://bruno-fernandes.github.io/Otavio-Branco/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Labels -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Otávio Branco | Consultor Solo Rico">
+    <meta name="twitter:description" content="Consultoria técnica e revendedor de insumos agrícolas de alta performance.">
+    <meta name="twitter:image" content="https://bruno-fernandes.github.io/Otavio-Branco/Image/Otavio_Branco.png">
+
 </head>
 
-<body>
+<body class="loading topo-pattern">
+
+    <!-- BACKGROUND BLOBS -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- SPLASH SCREEN -->
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="logo-animation">SOLO<span>RICO</span></div>
+            <div class="loader-bar"></div>
+            <p>Cultivando o Futuro...</p>
+        </div>
+    </div>
+
 
     <nav>
         <div class="logo">Solo Rico | <span>Otavio</span></div>
-        <ul>
+        <ul id="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#solucoes">Soluções</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" title="Alternar Tema">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-icon" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
+
 
     <header id="home" class="hero reveal">
         <div class="hero-content reveal">
@@ -34,13 +75,14 @@
             <h1>Otavio <span>Branco</span></h1>
             <p>Revendedor Especialista em Insumos Agrícolas. <br>Cultivando soluções de alta performance para sua
                 lavoura com a tecnologia Solo Rico.</p>
-            <a href="https://wa.me/5516997563538" class="btn btn-primary" target="_blank">Falar no WhatsApp <i
+            <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="btn btn-primary" target="_blank">Falar no WhatsApp <i
                     class="fab fa-whatsapp"></i></a>
         </div>
         <div class="hero-image-container">
             <img src="Image/Otavio_Branco.png" alt="Otávio Branco">
         </div>
     </header>
+
 
     <section id="sobre" class="reveal">
         <div class="section-title reveal">
@@ -76,19 +118,34 @@
             <div class="product-card">
                 <i class="fas fa-flask"></i>
                 <h3>Titanium Foliar</h3>
-                <p>Fórmulas completas para nutrição via folha, garantindo rápida absorção e correção de deficiências.
-                </p>
+                <p>Nutrição via folha com tecnologia de absorção imediata.</p>
+                <ul class="product-benefits">
+                    <li><i class="fas fa-check"></i> Absorção em tempo recorde</li>
+                    <li><i class="fas fa-check"></i> Correção de micronutrientes</li>
+                    <li><i class="fas fa-check"></i> Estímulo ao vigor vegetativo</li>
+                </ul>
             </div>
             <div class="product-card">
                 <i class="fas fa-mountain"></i>
                 <h3>Titanium Sollus</h3>
-                <p>Correção e fertilidade do solo para um sistema radicular forte e plantas vigorosas.</p>
+                <p>Fertilidade e equilíbrio químico para um solo produtivo.</p>
+                <ul class="product-benefits">
+                    <li><i class="fas fa-check"></i> Enraizamento profundo</li>
+                    <li><i class="fas fa-check"></i> Redução da acidez do solo</li>
+                    <li><i class="fas fa-check"></i> Melhor aproveitamento hídrico</li>
+                </ul>
             </div>
             <div class="product-card">
                 <i class="fas fa-droplet"></i>
                 <h3>Adjuvantes</h3>
-                <p>Máxima eficiência nas aplicações, reduzindo perdas e melhorando a cobertura das plantas.</p>
+                <p>Otimização máxima de cada gota aplicada no campo.</p>
+                <ul class="product-benefits">
+                    <li><i class="fas fa-check"></i> Redução de deriva e perdas</li>
+                    <li><i class="fas fa-check"></i> Melhor cobertura da planta</li>
+                    <li><i class="fas fa-check"></i> Compatibilidade total na calda</li>
+                </ul>
             </div>
+
         </div>
 
         <div class="section-title reveal" style="margin-top: 80px;">
@@ -124,21 +181,77 @@
             <h2>Contato Profissional</h2>
             <p>Vamos conversar sobre o futuro da sua lavoura?</p>
         </div>
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <p style="margin-bottom: 2rem;">Estou disponível para consultoria técnica e fornecimento de insumos em toda
-                a região.</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <a href="mailto:otavio.solorico@hotmail.com"
-                    style="color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 1.2rem;">
-                    <i class="fas fa-envelope"></i> otavio.solorico@hotmail.com
-                </a>
-                <a href="tel:+5516997563538"
-                    style="color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 1.2rem;">
-                    <i class="fas fa-phone"></i> (16) 99756-3538
-                </a>
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <p>Estou disponível para consultoria técnica e fornecimento de insumos em toda a região.</p>
+                <div class="contact-links">
+                    <a href="mailto:otavio.solorico@hotmail.com">
+                        <i class="fas fa-envelope"></i> otavio.solorico@hotmail.com
+                    </a>
+                    <a href="tel:+5516997563538">
+                        <i class="fas fa-phone"></i> (16) 99756-3538
+                    </a>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="btn btn-primary" target="_blank">WhatsApp <i
+                            class="fab fa-whatsapp"></i></a>
+                    <button id="download-vcard" class="btn btn-secondary">Salvar Contato <i class="fas fa-id-card"></i></button>
+                </div>
             </div>
-            <div style="margin-top: 3rem;">
-                <a href="https://wa.me/5516997563538" class="btn btn-primary" target="_blank">Enviar Mensagem Direta</a>
+
+
+            <!-- Form Connected to Web3Forms -->
+            <div class="contact-form-wrapper reveal">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="Novo Lead: Portfólio Otávio Branco">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="assunto" required>
+                            <option value="" disabled selected>O que você precisa?</option>
+                            <option value="Consultoria Técnica">Consultoria Técnica</option>
+                            <option value="Insumos/Produtos">Solicitar Insumos</option>
+                            <option value="Dúvida Geral">Dúvida Geral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="faq" style="background-color: var(--bg-light);" class="reveal">
+        <div class="section-title reveal">
+            <h2>Dúvidas Frequentes</h2>
+            <p>Respostas rápidas para as principais questões dos produtores.</p>
+        </div>
+        <div class="faq-accordion cascade">
+            <div class="faq-item">
+                <div class="faq-question">Quais culturas os produtos Solo Rico atendem? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Atendemos as principais culturas do agronegócio nacional, como soja, milho, cana-de-açúcar, café, citros e hortifrúti, com recomendações específicas para cada fase do ciclo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Qual o diferencial do Titanium Foliar? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Nossa linha foliar utiliza quelatos de alta estabilidade, o que garante que a planta absorva os nutrientes mesmo em situações de estresse, sem perdas por lavagem ou cristalização.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Como funciona a consultoria técnica? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Trabalho lado a lado com o produtor, realizando o acompanhamento em campo para identificar deficiências e montar o cronograma de nutrição ideal para maximizar a produtividade.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Qual o prazo médio de entrega dos insumos? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Possuímos uma logística otimizada para a região, operando com agilidade tanto para calcário e gesso quanto para as linhas de nutrição líquida.</div>
             </div>
         </div>
     </section>
@@ -146,11 +259,14 @@
     <footer style="padding: 50px 10%; background-color: var(--primary-color); color: var(--white); text-align: center;">
         <p>&copy; 2026 Solo Rico | Otávio Branco.</p>
         <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Lado a lado com o produtor rural.</p>
+        <p style="font-size: 0.75rem; margin-top: 20px; opacity: 0.6;">Desenvolvido por <a href="https://www.linkedin.com/in/bruno-fernandes-ti" target="_blank" style="color: var(--white); text-decoration: underline;">Bruno Fernandes</a></p>
     </footer>
 
-    <a href="https://wa.me/5516997563538" class="whatsapp-float" target="_blank">
+
+    <a href="https://wa.me/5516997563538?text=Olá%20Otávio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Solo%20Rico%20para%20minha%20lavoura." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
 
     <script src="script.js"></script>
 </body>
